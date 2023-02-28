@@ -10,6 +10,17 @@ pipeline {
 
    agent  any
     stages {
+        stage('awsIntergation') {
+            steps {
+               withCredentials([[
+                   $class:'AmazonWebServicesCredentialsBindings',
+                   credentialsId: 'aws-jenkins-demo',
+                   accessKeyVariable:'AWS_ACCESS_KEY_ID',
+                   secretKeyVariable:'AWS_SECRET_ACCESS_KEY'
+                   ]]) 
+                }
+        
+}
         stage('checkout') {
             steps {
                  script{
