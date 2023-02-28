@@ -8,10 +8,10 @@ pipeline {
         stage('awsIntergation') {
             steps {
                withCredentials([[
-                   $class:'AmazonWebServicesCredentialsBindings',
+                   $class:'AmazonWebServicesCredentialsBinding',
                    credentialsId: 'aws-jenkins-demo',
-                   accessKeyVariable:'AWS_ACCESS_KEY_ID',
-                   secretKeyVariable:'AWS_SECRET_ACCESS_KEY'
+                   accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                    ]]) 
                 }
         
