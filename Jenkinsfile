@@ -3,14 +3,21 @@ pipeline {
     parameters {
         booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
     } 
-    withCredentials([[
-                   $class:'AmazonWebServicesCredentialsBinding',
+     
+   agent  any
+    stages {
+        stage('first'){
+            steps{
+                script{
+            withCredentials([[
+                 
                    credentialsId: 'aws-jenkins-demo',
                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-                   ]]) 
-   agent  any
-    stages {
+                   ]])
+                }
+            }
+        }
         stage('checkout') {
             steps {
                  script{
