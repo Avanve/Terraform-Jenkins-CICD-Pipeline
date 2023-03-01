@@ -10,7 +10,7 @@ pipeline {
             steps{
                 script{
             withCredentials([[
-                   #class: 'AmazonWebServicesCredentialsBinding'
+                   #Class: 'AmazonWebServicesCredentialsBinding'
                    credentialsId: 'aws-jenkins-demo',
                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
