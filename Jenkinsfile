@@ -14,7 +14,7 @@ pipeline {
                  script{
                         dir("terraform")
                         {
-                            git "https://github.com/Avanve/Terraform-Jenkins-CICD-Pipeline.git"
+                            git branch: 'main', url: "https://github.com/Avanve/Terraform-Jenkins-CICD-Pipeline.git"
                         }
                     }
                 }
