@@ -27,30 +27,30 @@ pipeline {
 
         stage('Plan') {
             steps {
-                bat 'terraform init -input=false'
-                bat'terraform workspace new %{environment}%'
-                bat "terraform plan -input=false -out tfplan "
-                bat 'terraform show -no-color tfplan > tfplan.txt'
+                    bat 'terraform init -input=false'
+                    bat'terraform workspace new %{environment}%'
+                    bat "terraform plan -input=false -out tfplan "
+                    bat 'terraform show -no-color tfplan > tfplan.txt'
             }
             stage('Approval') {
            when {
-               not {
-                   equals expected: true, actual: params.autoApprove
-               }
-           }
+                  not {
+                        equals expected: true, actual: params.autoApprove
+                     }
+                }
 
            steps {
                script {
-                    def plan = readFile 'terraform/tfplan.txt'
-                    input message: "Do you want to apply the plan?",
-                    parameters: [text(name: 'Plan', description: 'Please review the plan', defaultValue: plan)]
+                         def plan = readFile 'terraform/tfplan.txt'
+                         input message: "Do you want to apply the plan?",
+                         parameters: [text(name: 'Plan', description: 'Please review the plan', defaultValue: plan)]
                }
            }
         }
         
      stage('Apply') {
             steps {
-                bat " terraform apply -input=false tfplan"
+                     bat " terraform apply -input=false tfplan"
             }
         }
     }
