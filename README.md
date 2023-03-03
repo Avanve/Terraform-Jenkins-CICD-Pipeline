@@ -1,6 +1,14 @@
 # Terraform-Jenkins-CICD-Pipeline
 
-This is Terraform module for creating AWS EC2 instance.
+This is Terraform module for creating AWS EC2 instance.It contains
+
+ 1] Jenkins Configuration
+ 
+ 2] AWS Credential Configuration
+ 
+ 3] Terraform Code Integration
+ 
+ 4] Jenkins file
 
  Pre-requistes:
 
@@ -12,7 +20,7 @@ This is Terraform module for creating AWS EC2 instance.
  
     Jenkins file already created in your SCM
  
-    AWS account is needed. Go to Jenins Dashboard-> Manage Jenkins->Manage Credential->sYSTEM->Add your Access key and Secret Access key
+    AWS account is needed. Go to Jenins Dashboard-> Manage Jenkins-> Manage Credential->System-> Add your Access key and Secret Access key
 
 
 If your Jenkins is installed on Windows use bat command and for Linux use sh command
