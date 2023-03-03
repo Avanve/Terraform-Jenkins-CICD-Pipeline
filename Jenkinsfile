@@ -2,7 +2,7 @@
 pipeline {
 
     parameters {
-        string(name: 'environment', defaultValue: 'terraform', description: 'Workspace/environment file to use for deployment')
+        string(name: 'environment', defaultValue: 'aws', description: 'Workspace/environment file to use for deployment')
         booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
 
     }
@@ -30,8 +30,8 @@ pipeline {
         stage('Plan') {
             steps {
                 bat 'terraform init -input=false'
-                bat 'terraform workspace new %{environment}%'
-                bat 'terraform workspace select %{environment}%'
+                bat 'terraform workspace new %environment%'
+                bat 'terraform workspace select %environment%'
                 bat "terraform plan -input=false -out tfplan "
                 bat 'terraform show -no-color tfplan > tfplan.txt'
             }
