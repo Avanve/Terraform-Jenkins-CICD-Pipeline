@@ -20,10 +20,14 @@ This is Terraform module for creating AWS EC2 instance. It contains
  
     Jenkins file already created in your SCM
  
-    AWS account is needed. Go to Jenins Dashboard-> Manage Jenkins-> Manage Credential->System-> Add your Access key and Secret Access key
+    AWS account is needed. 
 
 
 If your Jenkins is installed on Windows use bat command and for Linux use sh command
+
+AWS Credential Configuration :
+
+   Go to Jenins Dashboard-> Manage Jenkins-> Manage Credential->System-> Add your Access key and Secret Access key
 
 
 Create Jenkins Pipeline
