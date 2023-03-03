@@ -1,6 +1,6 @@
 # Terraform-Jenkins-CICD-Pipeline
 
-This is Terraform module for creating AWS EC2 instance.It contains
+This is Terraform module for creating AWS EC2 instance. It contains
 
  1] Jenkins Configuration
  
