@@ -55,7 +55,7 @@ Create Jenkins Pipeline
 
 Pipeline is created. Lets Buid pipeline.
 
-After Successful build EC2 instance is deployed. Check AWS Manahement Console.
+After Successful build EC2 instance is deployed. Check AWS Management Console.
 
 
 
